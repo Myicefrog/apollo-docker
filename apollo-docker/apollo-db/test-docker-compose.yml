@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  apollo-db:
+    image: mysql:5.7
+    container_name: apollo-db
+    environment:
+     - TZ=Asia/Shanghai
+     - MYSQL_ROOT_PASSWORD=apollo
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      - ./sqldata:/var/lib/mysql
+
