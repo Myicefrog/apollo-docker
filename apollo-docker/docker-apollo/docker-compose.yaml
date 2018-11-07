@@ -7,13 +7,16 @@ services:
     volumes:
        - ./logs:/opt
 # 启动前,确认对应环境的数据库已经建立，否则apollo无法启动.
+# Dev/Fat/Uat/Pro
 # 默认端口:portal:8070; dev:8080,8090; fat:8081,8091; uat:8082,8092; pro:8083,8093
     environment:
       PORTAL_DB: jdbc:mysql://10.237.122.58:13306/ApolloPortalDB?characterEncoding=utf8
       PORTAL_DB_USER: root
       PORTAL_DB_PWD: apollo
+#      PORTAL_PORT: 8070
 
       DEV_DB: jdbc:mysql://10.237.122.58:13306/ApolloConfigDB?characterEncoding=utf8
       DEV_DB_USER: root
       DEV_DB_PWD: apollo
-      
+#      DEV_ADMIN_PORT:8090
+#      DEV_CONFIG_PORT:8080 
